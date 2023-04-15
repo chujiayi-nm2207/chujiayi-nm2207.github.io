@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="appstyle.css">
+		<script defer type="text/javascript" src="main.js"></script>
+		<title>Job Satisfaction</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+		<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    </head>
+
+	<!--Landing Page-->
+	<!--Design inspiration: https://www.free-css.com/free-css-templates/page282/leadmark -->
+    <body style="text-align: center;">
+		<div class="containerHeader">
+				<img class=jumping src="Resources/Are you truly happy.png">
+				<div class="center" style="font-size: 4vw">Are you truly happy?
+					<hr>
+				<p style="font-size: 2vw">A glimpse into Singapore’s working culture</p>
+				</div>
+				<!-- Credits:https://codepen.io/2xsamurai/pen/WwmjKQ -->
+				<div class="mouse">
+					<div class="scroller"></div>
+				</div>
+				</div>
+		</div>
+	
+		<!--Introduction to the website & project-->
+		<div class="containerPersona">
+			<img class="human" src="Resources/human.png" >
+			<p style="font-size: 3vw;">This is Jayde.</p>
+			<p style="font-size: 2vw; padding-right: 65%;">After 1.5 years in University and serving an internship, Jayde is unsure if what she is doing is her passion and if she wants to pursue this career. However, she feels that it is too late to change her field of studies.</p>
+			<p style="font-size: 2vw; font-weight: bolder; margin-bottom: 1vw;">Does Jayde sound like you?</p>
+			<p style="font-size: 20px">Let's take a look at job satisfaction around the world.</p>
+		</div>
+		
+		<!--World Map with global data-->
+		<div class="containerGlobal">
+			<p style="font-size: 3vw;"><a href="https://cdn2.hubspot.net/hubfs/481927/Randstad%20Workmonitor%20global%20report%20Q4%20-%20Dec%202019.pdf?__hstc=243245085.1379a85d4c0d338d8bd4bad57ed93ee0.1591170826568.1591170826568.1591170826568.1&__hssc=243245085.2.1591170826568">Job Satisfaction Percentages Around The World</a></p>
+			<div id='worldmap'></div>
+			
+		</div>
+
+		<!--Local Statsistics-->
+		<div class="containerLocal">
+			<p style="font-size: 2vw; margin-left: 2vw; margin-right: 2vw; padding-bottom: 3vw;"> However, a <a href="https://intellect.co/read/singapores-workforce-has-the-poorest-mental-health-job-satisfaction-and-quality-of-life-in-the-region-new-study-finds/#:~:text=At%20the%20same%20time%2C%2026,Indonesia%20and%20the%20Philippines%20respectively.">study</a> has shown that Singapore has the worst mental health amongst Southeast Asia, with employees having the lowest levels of engagement, job satisfaction and overall quality of life.</p>
+			<div class="statistics" id="look">
+				<img src="Resources/1.png" style="width: 100%; padding-top: 5vw; padding-bottom: 5vw;">
+				<p style="font-size: 20px;">Only <a href="https://www.hcamag.com/asia/news/general/2-in-3-singaporeans-dread-going-to-work-daily/154231">1 in 3 Singaporeans</a> said they ‘always’ or ‘nearly always’ look forward to going to work daily.</p>
+			</div>
+
+			<div class="statistics" id="motivation">
+				<img src="Resources/2.png" style="width: 100%; padding-top: 5vw; padding-bottom: 5vw;">
+				<p style="font-size: 20px;">Only <a href="https://www.hcamag.com/asia/news/general/2-in-3-singaporeans-dread-going-to-work-daily/154231">3 in 5 Singaporeans</a> said that they are motivated to go to work every day.</p>
+			</div>
+
+			<div class="statistics" id="satisfaction">
+				<canvas id="satisfactionchart" height="40vw"></canvas>
+				<p style="font-size: 20px;"><a href="https://www.hcamag.com/asia/news/general/2-in-3-singaporeans-dread-going-to-work-daily/154231">49%</a> of Singaporeans are satisfied with their current job, which is below the global average of 62%.</p>
+			</div>
+		</div>
+
+		<!--Radial charts on why employees still stay in their company-->
+		<div class="push">
+			<p style="font-size: 3vw; color: #003048; margin-top: 5vw; margin-bottom: 6vw;">Despite the low job satisfaction, why are people still in their jobs?</p>
+			<div id="chart">
+			</div>
+			<p style="font-size: 25px; color: #003048; margin-left: 7vw; margin-right: 7vw; margin-top: 5vw;"><a href="https://www.todayonline.com/singapore/spore-workers-dissatisfied-mental-health-region-1991316">58%</a> of employees desire to build a better life for themselves and their loved ones, while <a href="https://www.todayonline.com/singapore/spore-workers-dissatisfied-mental-health-region-1991316">53%</a> hope to achieve a sense of accomplishment through their work. <a href="https://www.todayonline.com/singapore/spore-workers-dissatisfied-mental-health-region-1991316">50%</a> hope to earn more income and <a href="https://www.todayonline.com/singapore/spore-workers-dissatisfied-mental-health-region-1991316">30%</a> of those aged between 16-24 fear not being able to do as well as their peers. Contrary to popular belief, salary is not the main key driver of satisfaction among Singaporean employees.</p>
+		</div>
+
+		<!--Overlay of text on white box on image as background-->
+		<div class="containerJob">
+			<img class="hop" src="Resources/Jobhop.jpg">
+			<div class="centered">
+				<p style="font-size: 3vw; margin-top: 2vw;">However, employees fear switching careers because...</p>
+					<div style="font-size: 2vw; padding-left: 7vw; padding-right: 7vw;">
+						<p style="font-weight: bold;">1. Lack of Loyalty</p>
+						<p>In highly bureaucratic environments, loyalty and years of service is of importance. Hence, those who job hop may be perceived as someone who does not possess <a href=”https://www.channelnewsasia.com/commentary/will-job-hopping-hurt-career-cv-quit-2514236#:~:text=A%20recent%20Milieu%20Insight%20survey,be%20vital%20for%20continued%20success.”>loyalty.</a></p>
+						<br>
+						<p style="font-weight: bold;">2. Inability to Adapt</p>
+						<p><a href=”https://www.straitstimes.com/singapore/jobs/the-great-reshuffle-do-job-hoppers-bring-any-great-value-to-employers-0”>Elder employers</a> may also associate job hopping as not taking one’s career seriously and the <a href="https://www.channelnewsasia.com/commentary/will-job-hopping-hurt-career-cv-quit-2514236#:~:text=A%20recent%20Milieu%20Insight%20survey,be%20vital%20for%20continued%20success.">inability</a> to adapt to new working environments and cultures.</p>
+					</div>		
+			</div>
+		  </div>
+
+		<!--Bar chart on why employees leave their companies-->
+		<div class="leave">
+			<p style="font-size: 3vw;">Nonetheless, these are main factors why employees leave their companies</p>
+			<p style="font-size: 2vw;">according to a <a href=https://www.roberthalf.com.sg/press/salary-work-life-balance-what-motivates-singaporean-workers>survey</a> conducted among 500 Singaporean jobseekers</p>
+			<canvas id="leave-bar"></canvas>
+		</div>
+
+		<!--Polaroid looking, wanted to have an overlay effect but futile attempt *sad*-->
+		<div class="polaroid">
+			<img src="Resources/precovid.jpg" style="width: 50vw; border-radius: 1vw;">
+				<div class="container">
+				<p style="font-size: 2vw; font-weight: bold; margin-bottom: 0vw;">Before Covid-19</p>
+				<p style="font-size: 2vw;">Employees who were dissatisfied with their jobs chose to stay with it as they fear having gaps in their CV and being labelled as a “Job Hopper”. <a href="https://www.channelnewsasia.com/commentary/will-job-hopping-hurt-career-cv-quit-2514236#:~:text=A%20recent%20Milieu%20Insight%20survey,be%20vital%20for%20continued%20success.">(Lim, 2022)</a></p>
+				</div>
+		</div> <br><br>
+
+		<div class="polaroid">
+			<img src="Resources/covid.jpg" style="width: 50vw; border-radius: 1vw;">
+				<div class="container">
+				<p style="font-size: 2vw; font-weight: bold;">During Covid-19</p>
+				<p style="font-size: 2vw;">Companies are more reluctant to hire those who looked like job hoppers as they did not want to invest in those who might soon leave for a new job again.<a href="https://www.channelnewsasia.com/commentary/will-job-hopping-hurt-career-cv-quit-2514236#:~:text=A%20recent%20Milieu%20Insight%20survey,be%20vital%20for%20continued%20success.">(Lim, 2022)</a></p>
+				</div>
+		</div><br><br>
+
+		<div class="polaroid">
+			<img src="Resources/postcovid.jpg" style="width: 50vw; border-radius: 1vw;">
+				<div class="container">
+				<p style="font-size: 2vw; font-weight: bold;">After Covid-19</p>
+				<p style="font-size: 2vw;">Employers realised that having such judgements are to no one’s interest. By enquiring deeper into someone’s reason for job hopping might provide them with valuable insights. <a href="https://www.channelnewsasia.com/commentary/will-job-hopping-hurt-career-cv-quit-2514236#:~:text=A%20recent%20Milieu%20Insight%20survey,be%20vital%20for%20continued%20success.">(Lim, 2022)</a></p>
+				</div>
+
+		<!--News site looking elements on how to positively perceive yourself-->
+		</div>
+		<p style="font-size: 2vw; margin-left: 5vw; margin-right: 5vw;">While more employers are now more accepting of employees who have made significant career changes in the span of two years, the hiring process will be made stringent to determine if the person is worth investing in.</p>
+
+		<p style="font-size: 3vw; margin-top: 5vw;">Alternatively...</p>
+		<p style="font-size: 2vw; margin: 1vw 7vw 0vw 7vw;">Here’s how you can positively portray yourself to potential employers who are more receptive to changes in career as in these fluid times, restructuring can be mandatory for success.</p>
+
+		<div class="containerReads">
+			<img src="Resources/change.jpg" style="width: 30vw;">
+			<p style="font-size: 2vw; font-weight: bold;">1. Change Is Mandatory</p>
+			<p style="font-size: 2vw; font-weight: regular;">In certain industries, it is the culture to change firms frequently. Such changes in career can be linked to growth and exposure and staying too long might be associated with lack of exposure or disability to obtain better offers.</p>
+			<input type="button" id="read" value="Read More" onclick="website()">
+			<br><br><br>
+
+			<img src="Resources/evolution.png" style="width: 30vw;">
+			<p style="font-size: 2vw; font-weight: bold;">3. Evolution</p>
+			<p style="font-size: 2vw; font-weight: regular;">The original job scope may no longer be available due to technology advancements, digitalisation, sector transformation and company restructuring. Covid-19 has also led to the increase of micro-entrepreneurship and home businesses.</p>
+			<br>
+			<input type="button" id="read" value="Read More" style="margin-bottom: 5vw;" onclick="website()">
+
+			<img src="Resources/diversity.jpg" style="width: 30vw;">
+			<p style="font-size: 2vw; font-weight: bold;">2. Introducing Diversity</p>
+			<p style="font-size: 2vw; font-weight: regular;">Job hoppers can introduce diversity and alternative perspectives to the company. Changes in career can be linked with adaptability and the ability to learn fast in a foreign environment.</p>
+			<br><br>
+			<input type="button" id="read" value="Read More" onclick="website()">
+			<br><br><br>
+
+			<img src="Resources/discovery.jpg" style="width: 30vw;">
+			<p style="font-size: 2vw; font-weight: bold;">4. Exploration & Discovery</p>
+			<p style="font-size: 2vw; font-weight: regular;">In the initial stages of career, employers are more receptive and forgiving to the idea of changes in career as such changes can be associated with attempts of self-discovery to find what individuals want and do not want.</p>
+			<br><br><br>
+			<input type="button" id="read" value="Read More" onclick="website()">
+
+		</div>
+
+		<!--Columns on what to do moving forward-->
+			<p style="font-size: 3vw;">What's Next?</p>
+
+			<table class="movingon">
+				<tr>
+					<th>
+						<p style="font-size: 2vw;">Continue pursuing what you’re passionate about</p>
+						<p style="font-size: 20px; font-weight: lighter;">Learn more about the working world<a href="https://nus.edu.sg/cfg/employers/jobs"> here.</a></p>
+					</th>
+
+					<th> 
+						<p style="font-size: 2vw;">Consult a career counsellor in school</p>
+						<p style="font-size: 20px; font-weight: lighter;"><a href="https://nus.edu.sg/cfg/students/career-ready/career-advisory">Make an appointment</a> and speak with a career counseller.</p>
+					</th>
+
+					<th>
+						<p style="font-size: 2vw;">Explore more skills and career options</p>
+						<p style="font-size: 20px; font-weight: lighter;">Explore the <a href="https://www.myskillsfuture.gov.sg/content/student/en/primary/world-of-work/industry-landscape.html?abbreciation=d">different career opportunities</a> and job scopes available locally.</p>
+					</th>
+				</tr>
+			</table>
+		</div>	
+    </body>
+	
+	<footer>
+		<p style="font-size:2vw">Thank you for taking the time to look through my work !! I hope you enjoyed it &#x1F970 &#x1F493;</p>
+		<p>Here's a <a href="https://www.canva.com/design/DAFgLb7h-iM/sK1dUvHJvhdt1BYayAz6-Q/edit?utm_content=DAFgLb7h-iM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">documentation</a> of my work progress!</p>
+		<p>Copyright © 2023 Chu Jia Yi. All rights reserved.</p>
+		<br>
+	  </footer>
+
+</html>

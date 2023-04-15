@@ -1,0 +1,244 @@
+/*Generic website styling*/
+body, html {
+  height: 100vw;
+  width: 100%;
+  background-color: #FEEFD7;
+  font-family: 'Raleway', serif;
+  color: #003048;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+/*Header styling*/
+.containerHeader {
+  background-color: #f3f3f3;
+  position: relative;
+  text-align: center;
+}
+
+/*Setting of image as wallpaper and styling*/
+.jumping {
+  opacity: 0.5;
+  width: 100%;
+  display: block;
+}
+
+/*Horizontal Line*/
+hr {
+  height: 2px;
+  border-width:0px;
+  background-color: #003048;
+  size: 500;
+}
+
+/*Overlay of text*/
+.center {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Mouse icon perimeter*/
+.mouse {
+  width: 24px;
+  height: 43px;
+  border: 2px solid #003048;
+  border-radius: 25px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  margin: auto;
+}
+
+/*Stroke in mouse icon*/
+.scroller {
+  position: relative;
+  width: 3px;
+  height: 10px;
+  border-radius: 30%;
+  background-color: #003048;
+  top: 8px;
+  margin: auto;
+  animation-name: scroll;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+} 
+
+/*Mouse icon animation*/
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
+
+/*Introduction styling*/
+.containerPersona {
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 9%;
+  padding-bottom: 11%;
+}
+
+/*Styling of png*/
+.human {
+  height: 43vw;
+  float: right;
+  padding-right: 15vw;
+}
+
+/*Styling of global stats*/
+.containerGlobal {
+  background-color: #ffffff;
+  padding: 7vw;
+}
+
+/*Styling of local stats*/
+.containerLocal {
+  background-color: #003048;
+  color: #FEEFD7;
+  padding: 3vw 2vw 3vw 2vw;
+}
+
+/*Styling of boxes in local stats*/
+.statistics {
+  display: inline-block;
+  gap: 10vw;
+  padding: 3vw;
+  margin-bottom: 5vw;
+}
+
+/*Styling of first box*/
+#look { 
+	background-color: #FEEFD7;
+	color:#003048;
+	width: 24vw;
+  border-radius: 5px;
+}
+
+/*Styling of second box*/
+#motivation { 
+	background-color: #FEEFD7;
+	color:#003048;
+	width: 24vw;
+  border-radius: 5px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+/*Styling of third box*/
+#satisfaction { 
+	background-color: #FEEFD7;
+	color:#003048;
+	width: 24vw;
+  border-radius: 5px;
+}
+
+/*Styling of radial chart container*/
+.push {
+  margin-top: 3vw;
+  margin-bottom: 5%;
+}
+
+/*Styling of radial charts*/
+.push #chart {
+  width: 20%;
+  display: flex;
+  gap: 3vw;
+  padding-left: 5%;
+}
+
+/*Styling of overlays' container*/
+.containerJob {
+  background-color: #003048;
+  position: relative;
+  text-align: center;
+}
+
+/*Styling of box overlay*/
+.hop {
+  opacity: 0.5;
+  width: 100%;
+  display: block;
+}
+
+/*Styling of texts overlay*/
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f3f3f3;
+	color:#003048;
+  width: 80vw;
+  height: 40vw;
+	border-radius: 15px;
+}
+
+/*Styling of bar chart*/
+.leave {
+  max-width: 80vw;
+  margin: 50px auto;
+  margin-top: 5vw;
+}
+
+/*Styling of polaroid container*/
+.polaroid {
+  width: 50vw;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 25vw;
+  margin-right: 25vw;
+  text-align: center;
+  padding: 2vw 2vw 1vw 2vw;
+  border-radius: 2%;
+}
+
+/*Styling of columns*/
+.containerReads {
+  margin: 5vw 15vw 2vw 15vw;
+  text-align: left;
+  column-width: 20vw;
+  column-count: 2;
+  column-gap: 10vw;
+}
+
+/*Styling of button*/
+#read {
+  background-color: #7B020B;
+  border: none;
+  color: #FEEFD7;
+  font-family: 'Raleway', serif;
+  padding: 1vw 2vw;
+  text-align: center;
+  border-radius: 1vw;
+  font-size: 2vw;
+}
+
+/*Styling of button animation*/
+/* Credits: https://www.w3schools.com/css/css3_buttons.asp*/
+#read:active {
+  background-color: #7B020B;
+  box-shadow: 0 3px #4e0005;
+  transform: translateY(1px);
+}
+
+/*Styling of table*/
+.movingon { 
+  background-color: #629BBB;
+  color:#003048;
+  border-collapse: collapse;
+
+}
+
+/*Styling of columns in the table*/
+td, th {
+  padding: 15px 48px 15px 48px;
+  text-align: center;
+  width: 33%;
+  border-left: 3px solid #003048;
+  border-right: 3px solid #003048;
+}
